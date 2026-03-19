@@ -28,7 +28,17 @@ def asignacion_tareas(tareas, recursos):
     
     for r in recursos: 
         tiempo_por_recurso[r["id"]]=0
-
     
+
+    for t in tareas:
+
+            compatibles = []
+
+            for r in recursos:
+
+             if t["categoria"] in r["categorias"]:
+
+                    compatibles.append(recurso)
+
 
     pass
