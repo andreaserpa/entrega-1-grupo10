@@ -22,3 +22,7 @@ def leer_recursos():
             }
             recursos.append(recurso)
     return recursos
+
+def asignacion_tareas(tareas, recursos):
+    
+    pass
