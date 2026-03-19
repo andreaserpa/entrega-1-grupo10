@@ -25,7 +25,7 @@ def leer_recursos():
 
 def asignacion_tareas(tareas, recursos):
     tiempo_por_recurso = {}
-    
+    asignaciones=[]
     for r in recursos: 
         tiempo_por_recurso[r["id"]]=0
 
@@ -42,6 +42,16 @@ def asignacion_tareas(tareas, recursos):
 
         inicio = tiempo_recurso[mejor_recurso["id"]]
         fin = inicio + tarea["duracion"]
+
+        asignaciones.append({
+            "id_tarea": tarea["id"],
+            "id_recurso": mejor_recurso["id"],
+            "inicio": inicio,
+            "fin": fin
+        })
+
+        tiempo_recurso[mejor_recurso["id"]] = fin
+
 
 
     
