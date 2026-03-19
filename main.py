@@ -35,11 +35,15 @@ def asignacion_tareas(tareas, recursos):
             if t["categoria"] in r["categorias"]:
                 compatibles.append(recurso)
 
-    mejor_recurso = compatibles[0]
+        mejor_recurso = compatibles[0] 
+        for recurso in compatibles:
+            if tiempo_recurso[recurso["id"]] < tiempo_recurso[mejor_recurso["id"]]:
+                    mejor_recurso = recurso
     
-    for recurso in compatibles:
-         if tiempo_recurso[recurso["id"]] < tiempo_recurso[mejor_recurso["id"]]:
-                mejor_recurso = recurso
+   
+
+
+    
     
 
 
