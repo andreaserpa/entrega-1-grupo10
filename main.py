@@ -24,5 +24,7 @@ def leer_recursos():
     return recursos
 
 def asignacion_tareas(tareas, recursos):
+    tiempo_por_recurso = {}
     
+
     pass
