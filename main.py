@@ -12,3 +12,16 @@ def leer_tareas():
     return tareas
 
 def leer_recursos():
+    recursos = []
+    with open("recursos.txt", "r", encoding="utf-8") as f:
+        for linea in f:
+            partes = linea.strip().split(",")
+            recurso = {
+                "id":partes[0],
+                "categoria": partes[1:]
+            }
+            recursos.append(recurso)
+    return recursos
+
+print(tareas)
+print(recursos)
