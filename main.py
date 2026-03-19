@@ -10,3 +10,5 @@ def leer_tareas():
             }
             tareas.append(tarea)
     return tareas
+
+def leer_recursos():
