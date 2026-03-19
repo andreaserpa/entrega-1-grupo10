@@ -26,5 +26,9 @@ def leer_recursos():
 def asignacion_tareas(tareas, recursos):
     tiempo_por_recurso = {}
     
+    for r in recursos: 
+        tiempo_por_recurso[r["id"]]=0
+
+    
 
     pass
