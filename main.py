@@ -23,5 +23,15 @@ def leer_recursos():
             recursos.append(recurso)
     return recursos
 
-print(tareas)
-print(recursos)
+def main():
+    tareas = leer_tareas()
+    recursos = leer_recursos()
+
+    print("tareas:")
+    print(tareas)
+    print(" ")
+    print("recursos:")
+    print(recursos)
+
+if __name__ == "__main__":
+    main()
