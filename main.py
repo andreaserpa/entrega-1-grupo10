@@ -32,25 +32,25 @@ def asignacion_tareas(tareas, recursos):
     for t in tareas:
         compatibles = []
         for r in recursos:
-            if t["categoria"] in r["categorias"]:
-                compatibles.append(recurso)
+            if t["categoria"] in r["categoria"]:
+                compatibles.append(r)
 
         mejor_recurso = compatibles[0] 
         for recurso in compatibles:
-            if tiempo_recurso[recurso["id"]] < tiempo_recurso[mejor_recurso["id"]]:
+            if tiempo_por_recurso[recurso["id"]] < tiempo_por_recurso[mejor_recurso["id"]]:
                     mejor_recurso = recurso
 
-        inicio = tiempo_recurso[mejor_recurso["id"]]
-        fin = inicio + tarea["duracion"]
+        inicio = tiempo_por_recurso[mejor_recurso["id"]]
+        fin = inicio + t["duracion"]
 
         asignaciones.append({
-            "id_tarea": tarea["id"],
+            "id_tarea": t["id"],
             "id_recurso": mejor_recurso["id"],
             "inicio": inicio,
             "fin": fin
         })
 
-        tiempo_recurso[mejor_recurso["id"]] = fin
+        tiempo_por_recurso[mejor_recurso["id"]] = fin
     
     return asignaciones
     
