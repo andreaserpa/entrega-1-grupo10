@@ -51,8 +51,8 @@ def asignacion_tareas(tareas, recursos):
         })
 
         tiempo_recurso[mejor_recurso["id"]] = fin
-
-return asignaciones
+    
+    return asignaciones
     
     
 
