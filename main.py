@@ -39,8 +39,9 @@ def asignacion_tareas(tareas, recursos):
         for recurso in compatibles:
             if tiempo_recurso[recurso["id"]] < tiempo_recurso[mejor_recurso["id"]]:
                     mejor_recurso = recurso
-    
-   
+
+        inicio = tiempo_recurso[mejor_recurso["id"]]
+        fin = inicio + tarea["duracion"]
 
 
     
