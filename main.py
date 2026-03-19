@@ -22,16 +22,3 @@ def leer_recursos():
             }
             recursos.append(recurso)
     return recursos
-
-def main():
-    tareas = leer_tareas()
-    recursos = leer_recursos()
-
-    print("tareas:")
-    print(tareas)
-    print(" ")
-    print("recursos:")
-    print(recursos)
-
-if __name__ == "__main__":
-    main()
