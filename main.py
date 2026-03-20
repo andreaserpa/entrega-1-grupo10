@@ -146,3 +146,4 @@ def main():
         makespan_objetivo = int(sys.argv[1])
 tareas = leer_tareas()
 recursos = leer_recursos()
+asignaciones = asignacion_tareas(tareas, recursos)
