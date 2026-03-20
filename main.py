@@ -140,3 +140,4 @@ def main():
     if len(sys.argv) != 2:
         print("Uso: python main.py <makespan_objetivo>")
         return
+        makespan_objetivo = int(sys.argv[1])
