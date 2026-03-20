@@ -145,3 +145,4 @@ def main():
         return
         makespan_objetivo = int(sys.argv[1])
 tareas = leer_tareas()
+recursos = leer_recursos()
