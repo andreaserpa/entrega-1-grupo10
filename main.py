@@ -153,3 +153,4 @@ def escribir output(asignaciones):
             f.write(f"{a['id_tarea']},{a['id_recurso']},{a['inicio']},{a['fin']}\n")
 
 print("Makespan objetivo recibido:", makespan_objetivo)
+print("Se genero output.txt correctamente")
