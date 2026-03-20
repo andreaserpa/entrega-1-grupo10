@@ -147,3 +147,4 @@ def main():
 tareas = leer_tareas()
 recursos = leer_recursos()
 asignaciones = asignacion_tareas(tareas, recursos)
+def escribir output(asignaciones):
