@@ -154,3 +154,5 @@ def escribir output(asignaciones):
 
 print("Makespan objetivo recibido:", makespan_objetivo)
 print("Se genero output.txt correctamente")
+if __name__ == "__main__":
+    main()
