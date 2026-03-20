@@ -151,3 +151,5 @@ def escribir output(asignaciones):
     with open("output.txt", "w", encoding = "utf-8") as f:
         for a in asignaciones:
             f.write(f"{a['id_tarea']},{a['id_recurso']},{a['inicio']},{a['fin']}\n")
+
+print("Makespan objetivo recibido:", makespan_objetivo)
