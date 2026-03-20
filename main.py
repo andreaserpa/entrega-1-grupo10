@@ -1,31 +1,47 @@
+<<<<<<< HEAD
 # main.py
 
+=======
+>>>>>>> d927c52021ce9a72cbeb3584e29e4930164098ed
 def leer_tareas():
     tareas = []
     with open("tareas.txt", "r", encoding="utf-8") as f:
         for linea in f:
             partes = linea.strip().split(",")
             tarea = {
+<<<<<<< HEAD
                 "id": partes[0],
+=======
+                "id":partes[0],
+>>>>>>> d927c52021ce9a72cbeb3584e29e4930164098ed
                 "duracion": int(partes[1]),
                 "categoria": partes[2]
             }
             tareas.append(tarea)
     return tareas
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d927c52021ce9a72cbeb3584e29e4930164098ed
 def leer_recursos():
     recursos = []
     with open("recursos.txt", "r", encoding="utf-8") as f:
         for linea in f:
             partes = linea.strip().split(",")
             recurso = {
+<<<<<<< HEAD
                 "id": partes[0],
                 "categorias": partes[1:]
+=======
+                "id":partes[0],
+                "categoria": partes[1:]
+>>>>>>> d927c52021ce9a72cbeb3584e29e4930164098ed
             }
             recursos.append(recurso)
     return recursos
 
+<<<<<<< HEAD
 
 def planificar_tareas(tareas, recursos):
     asignaciones = []
@@ -47,11 +63,36 @@ def planificar_tareas(tareas, recursos):
 
         asignaciones.append({
             "id_tarea": tarea["id"],
+=======
+def asignacion_tareas(tareas, recursos):
+    tiempo_por_recurso = {}
+    asignaciones=[]
+    for r in recursos: 
+        tiempo_por_recurso[r["id"]]=0
+
+    for t in tareas:
+        compatibles = []
+        for r in recursos:
+            if t["categoria"] in r["categoria"]:
+                compatibles.append(r)
+
+        mejor_recurso = compatibles[0] 
+        for recurso in compatibles:
+            if tiempo_por_recurso[recurso["id"]] < tiempo_por_recurso[mejor_recurso["id"]]:
+                    mejor_recurso = recurso
+
+        inicio = tiempo_por_recurso[mejor_recurso["id"]]
+        fin = inicio + t["duracion"]
+
+        asignaciones.append({
+            "id_tarea": t["id"],
+>>>>>>> d927c52021ce9a72cbeb3584e29e4930164098ed
             "id_recurso": mejor_recurso["id"],
             "inicio": inicio,
             "fin": fin
         })
 
+<<<<<<< HEAD
         # Actualiza el tiempo disponible del recurso
         tiempo_recurso[mejor_recurso["id"]] = fin
 
@@ -82,3 +123,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+=======
+        tiempo_por_recurso[mejor_recurso["id"]] = fin
+    
+    return asignaciones
+    
+    
+
+
+    
+>>>>>>> d927c52021ce9a72cbeb3584e29e4930164098ed
