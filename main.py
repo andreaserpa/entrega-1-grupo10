@@ -133,3 +133,10 @@ if __name__ == "__main__":
 
     
 >>>>>>> d927c52021ce9a72cbeb3584e29e4930164098ed
+
+def main():
+    tareas = leer_tareas()
+    recursos = leer_recursos()
+    if len(sys.argv) != 2:
+        print("Uso: python main.py <makespan_objetivo>")
+        return
