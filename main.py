@@ -149,3 +149,4 @@ recursos = leer_recursos()
 asignaciones = asignacion_tareas(tareas, recursos)
 def escribir output(asignaciones):
     with open("output.txt", "w", encoding = "utf-8") as f:
+        for a in asignaciones:
