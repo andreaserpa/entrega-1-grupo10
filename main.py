@@ -1,5 +1,6 @@
 # main.py
 import sys
+from typing import Any
 
 def leer_tareas(nombre_archivo: str) -> list[dict[str,Any]]:
     tareas: list[dict[str,Any]] = []
