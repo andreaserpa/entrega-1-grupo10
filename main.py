@@ -29,36 +29,27 @@ def leer_recursos():
     return recursos
 
 
-def planificar_tareas(tareas, recursos):
-    tiempo_por_recurso = {}
-    asignaciones = []
-
-    for r in recursos:
-        tiempo_por_recurso[r["id"]] = 0
+def planificar_tareas(tareas: list[dict[str, Any]], recursos: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    tiempo_por_recurso: dict[str, int] = {r["id"]: 0 for r in recursos}
+    asignaciones: list[dict[str, Any]] = []
 
     for t in tareas:
-        compatibles = []
-        for r in recursos:
-            if t["categoria"] in r["categorias"]:
-                compatibles.append(r)
+        compatibles = [r for r in recursos if t["categoria"] in r["categorias"]]
 
-        mejor_recurso = compatibles[0]
-        for r in compatibles:
-            if tiempo_por_recurso[r["id"]] < tiempo_por_recurso[mejor_recurso["id"]]:
-                mejor_recurso = r
-
-        inicio = tiempo_por_recurso[mejor_recurso["id"]]
+        mejor_recurso = min(compatibles, key=lambda r: tiempo_por_recurso[r["id"]])
+        
+        id_r = mejor_recurso["id"]
+        inicio = tiempo_por_recurso[id_r]
         fin = inicio + t["duracion"]
 
         asignaciones.append({
             "id_tarea": t["id"],
-            "id_recurso": mejor_recurso["id"],
+            "id_recurso": id_r,
             "inicio": inicio,
             "fin": fin
         })
-
-        tiempo_por_recurso[mejor_recurso["id"]] = fin
-
+        tiempo_por_recurso[id_r] = fin 
+    
     return asignaciones
 
 
