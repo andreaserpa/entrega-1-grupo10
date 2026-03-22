@@ -1,10 +1,9 @@
 # main.py
 import sys
 
-
-def leer_tareas():
-    tareas = []
-    with open("tareas.txt", "r", encoding="utf-8") as f:
+def leer_tareas(nombre_archivo: str) -> list[dict[str,Any]]:
+    tareas: list[dict[str,Any]] = []
+    with open("nombre_archivo", "r", encoding="utf-8") as f:
         for linea in f:
             partes = linea.strip().split(",")
             tarea = {
@@ -16,8 +15,8 @@ def leer_tareas():
     return tareas
 
 
-def leer_recursos():
-    recursos = []
+def leer_recursos(nombre_archivo: str) -> list[dict[str,Any]]:
+    recursos: list[dict[str,Any]] = []
     with open("recursos.txt", "r", encoding="utf-8") as f:
         for linea in f:
             partes = linea.strip().split(",")
