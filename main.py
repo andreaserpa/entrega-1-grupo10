@@ -59,15 +59,18 @@ def escribir_output(asignaciones: list[dict[str, Any]])-> None:
             f.write(f"{a['id_tarea']},{a['id_recurso']},{a['inicio']},{a['fin']}\n")
 
 
-def main():
-    if len(sys.argv) != 2:
+def main()-> None:
+    if len(sys.argv) != 4:
         print("Uso: python main.py <makespan_objetivo>")
         return
 
     makespan_objetivo = int(sys.argv[1])
+    archivo_t = sys.argv[2]
+    archivo_r = sys.argv[3]
 
-    tareas = leer_tareas()
-    recursos = leer_recursos()
+
+    tareas = leer_tareas(archivo_t)
+    recursos = leer_recursos(archivo_r)
     asignaciones = planificar_tareas(tareas, recursos)
     escribir_output(asignaciones)
 
