@@ -4,7 +4,7 @@ from typing import Any
 
 def leer_tareas(nombre_archivo: str) -> list[dict[str,Any]]:
     tareas: list[dict[str,Any]] = []
-    with open("nombre_archivo", "r", encoding="utf-8") as f:
+    with open(nombre_archivo, "r", encoding="utf-8") as f:
         for linea in f:
             partes = linea.strip().split(",")
             tarea = {
