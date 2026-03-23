@@ -74,10 +74,8 @@ def main()-> None:
     asignaciones = planificar_tareas(tareas, recursos)
     escribir_output(asignaciones)
 
-    print("Makespan objetivo recibido:", makespan_objetivo)
-    print("Tareas asignadas:")
-    for a in asignaciones:
-        print(a)
+    print(f"Planificacion completada usando {archivo_t} y {archivo_r}")
+    print(f"Makespan objetivo:{makespan_objetivo}")
     print("Se generó output.txt correctamente")
 
 
