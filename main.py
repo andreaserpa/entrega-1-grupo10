@@ -18,7 +18,7 @@ def leer_tareas(nombre_archivo: str) -> list[dict[str,Any]]:
 
 def leer_recursos(nombre_archivo: str) -> list[dict[str,Any]]:
     recursos: list[dict[str,Any]] = []
-    with open("recursos.txt", "r", encoding="utf-8") as f:
+    with open(nombre_archivo, "r", encoding="utf-8") as f:
         for linea in f:
             partes = linea.strip().split(",")
             recurso = {
